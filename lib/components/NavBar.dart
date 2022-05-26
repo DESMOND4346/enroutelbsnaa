@@ -1,5 +1,7 @@
 import 'package:enroutelbsnaa/screens/profile/profile_page.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 class NavBar extends StatelessWidget {
   @override
@@ -10,7 +12,7 @@ class NavBar extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text('Desmond Dass'),
+            accountName: Text(''),
             accountEmail: Text('originalhybrid@gmail.com'),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
@@ -70,3 +72,4 @@ class NavBar extends StatelessWidget {
     );
   }
 }
+

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "146189683521",
+    "project_id": "enroutelbsnaa-15f65",
+    "storage_bucket": "enroutelbsnaa-15f65.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:146189683521:android:cfb54e3bfa1aaea41c6fc0",
+        "android_client_info": {
+          "package_name": "com.lpm.enroutelbsnaa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "146189683521-2ps1p6jmondu8bti7d4206cfjicebp2i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhj77oV5WPhloo5FDeNcyajsoo8H9Cqm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "146189683521-2ps1p6jmondu8bti7d4206cfjicebp2i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "146189683521-j0ck8o7ut7m84alme3g1u785kml79qut.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.lpm.enroutelbsnaa"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

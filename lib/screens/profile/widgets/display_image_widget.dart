@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 class DisplayImage extends StatelessWidget {
-  final String imagePath;
+  final imagePath;
   final VoidCallback onPressed;
 
   // Constructor

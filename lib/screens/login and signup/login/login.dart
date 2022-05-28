@@ -56,8 +56,6 @@ class Login extends StatelessWidget {
       ),
     );
   }
-
-
 }
 
 class LoginForm extends StatefulWidget {
@@ -85,12 +83,12 @@ class _LoginFormState extends State<LoginForm> {
           // email
           TextFormField(
             // initialValue: 'Input text',
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               prefixIcon: Icon(Icons.email_outlined),
               labelText: 'Email',
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.all(
-                  const Radius.circular(100.0),
+                  Radius.circular(100.0),
                 ),
               ),
             ),
@@ -104,7 +102,7 @@ class _LoginFormState extends State<LoginForm> {
               email = val;
             },
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
 
@@ -114,9 +112,9 @@ class _LoginFormState extends State<LoginForm> {
             decoration: InputDecoration(
               labelText: 'Password',
               prefixIcon: Icon(Icons.lock_outline),
-              border: OutlineInputBorder(
+              border: const OutlineInputBorder(
                 borderRadius: BorderRadius.all(
-                  const Radius.circular(100.0),
+                  Radius.circular(100.0),
                 ),
               ),
               suffixIcon: GestureDetector(
@@ -158,8 +156,11 @@ class _LoginFormState extends State<LoginForm> {
                       .signIn(email: email!, password: password!)
                       .then((result) {
                     if (result == null) {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => BotNav()));
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => BotNav()),
+                        (route) => false,
+                      );
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         content: Text(

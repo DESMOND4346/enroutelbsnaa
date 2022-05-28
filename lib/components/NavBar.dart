@@ -1,19 +1,30 @@
+import 'package:enroutelbsnaa/screens/login%20and%20signup/login/login.dart';
 import 'package:enroutelbsnaa/screens/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    //method implementing logout and re routing to login page
+    logout() async {
+      await FirebaseAuth.instance.signOut();
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Login()),
+      );
+    }
+
     return Drawer(
       child: ListView(
         // Remove padding
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text(''),
-            accountEmail: Text('originalhybrid@gmail.com'),
+            accountName: getName(),
+            accountEmail: getMail(),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.network(
@@ -24,7 +35,7 @@ class NavBar extends StatelessWidget {
                 ),
               ),
             ),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.blue,
               image: DecorationImage(
                   fit: BoxFit.fill,
@@ -40,36 +51,47 @@ class NavBar extends StatelessWidget {
               MaterialPageRoute(builder: (context) => const ProfilePage()),
             ),
           ),
+          // ListTile(
+          //   leading: Icon(Icons.account_box_outlined),
+          //   title: const Text('Friends'),
+          //   onTap: () => null,
+          // ),
           ListTile(
-            leading: Icon(Icons.account_box_outlined),
-            title: const Text('Friends'),
-            onTap: () => null,
-          ),
-          ListTile(
-            leading: Icon(Icons.share),
+            leading: const Icon(Icons.share),
             title: const Text('Share'),
             onTap: () => null,
           ),
           const Divider(),
           ListTile(
-            leading: Icon(Icons.settings),
+            leading: const Icon(Icons.settings),
             title: const Text('Settings'),
             onTap: () => null,
           ),
           ListTile(
-            leading: Icon(Icons.description),
+            leading: const Icon(Icons.description),
             title: const Text('About us'),
             onTap: () => null,
           ),
           const Divider(),
           ListTile(
-            title: const Text('Log out'),
-            leading: Icon(Icons.exit_to_app),
-            onTap: () => null,
-          ),
+              title: const Text('Log out'),
+              leading: Icon(Icons.exit_to_app),
+              onTap: () => logout()),
         ],
       ),
     );
   }
-}
 
+  // returns name of the current user
+  getName() {
+    var pname = _auth.currentUser?.displayName.toString();
+    return Text(pname!);
+  }
+
+  //returns mail of current user
+
+  getMail() {
+    var mail = _auth.currentUser?.email.toString();
+    return Text(mail!);
+  }
+}

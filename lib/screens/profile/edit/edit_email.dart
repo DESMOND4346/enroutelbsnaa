@@ -1,5 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:enroutelbsnaa/screens/profile/user/user_data.dart';
 import 'package:enroutelbsnaa/screens/profile/widgets/appbar_widget.dart';
 import 'package:email_validator/email_validator.dart';
 
@@ -16,7 +16,7 @@ class EditEmailFormPage extends StatefulWidget {
 class EditEmailFormPageState extends State<EditEmailFormPage> {
   final _formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
-  var user = UserData.myUser;
+  var user = FirebaseAuth.instance.currentUser;
 
   @override
   void dispose() {
@@ -25,7 +25,7 @@ class EditEmailFormPageState extends State<EditEmailFormPage> {
   }
 
   void updateUserValue(String email) {
-    user.email = email;
+    user?.updateEmail(email);
   }
 
   @override
@@ -38,16 +38,16 @@ class EditEmailFormPageState extends State<EditEmailFormPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                SizedBox(
+                const SizedBox(
                     width: 320,
-                    child: const Text(
+                    child: Text(
                       "What's your email?",
                       style:
                           TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                       textAlign: TextAlign.left,
                     )),
                 Padding(
-                    padding: EdgeInsets.only(top: 40),
+                    padding:const EdgeInsets.only(top: 40),
                     child: SizedBox(
                         height: 100,
                         width: 320,

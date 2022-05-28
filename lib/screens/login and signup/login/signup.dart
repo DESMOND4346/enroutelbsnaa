@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import './authentication.dart';
 import 'package:enroutelbsnaa/components/botnavbar.dart';
@@ -89,7 +90,7 @@ class _SignupFormState extends State<SignupForm> {
 
   bool agree = false;
 
-  final pass =  TextEditingController();
+  final pass = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -175,7 +176,7 @@ class _SignupFormState extends State<SignupForm> {
           TextFormField(
             decoration: InputDecoration(
               labelText: 'Full name',
-              prefixIcon: Icon(Icons.account_circle),
+              prefixIcon: const Icon(Icons.account_circle),
               border: border,
             ),
             onSaved: (val) {
@@ -199,13 +200,13 @@ class _SignupFormState extends State<SignupForm> {
                 },
                 value: agree,
               ),
-              Flexible(
+              const Flexible(
                 child: Text(
                     'By creating account, I agree to Terms & Conditions and Privacy Policy.'),
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
 
@@ -222,8 +223,12 @@ class _SignupFormState extends State<SignupForm> {
                       .signUp(email: email!, password: password!)
                       .then((result) {
                     if (result == null) {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => BotNav()));
+                      FirebaseAuth.instance.currentUser
+                          ?.updateDisplayName(name);
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const BotNav()));
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         content: Text(
@@ -236,9 +241,9 @@ class _SignupFormState extends State<SignupForm> {
                 }
               },
               style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(24.0)))),
-              child: Text('Sign Up'),
+              child: const Text('Sign Up'),
             ),
           ),
         ],

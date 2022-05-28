@@ -1,6 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:string_validator/string_validator.dart';
-import 'package:enroutelbsnaa/screens/profile/user/user_data.dart';
 import 'package:enroutelbsnaa/screens/profile/widgets/appbar_widget.dart';
 
 // This class handles the Page to edit the Name Section of the User Profile.
@@ -17,7 +17,7 @@ class EditNameFormPageState extends State<EditNameFormPage> {
   final _formKey = GlobalKey<FormState>();
   final firstNameController = TextEditingController();
   final secondNameController = TextEditingController();
-  var user = UserData.myUser;
+  var user = FirebaseAuth.instance.currentUser;
 
   @override
   void dispose() {
@@ -26,7 +26,7 @@ class EditNameFormPageState extends State<EditNameFormPage> {
   }
 
   void updateUserValue(String name) {
-    user.name = name;
+    user?.updateDisplayName(name);
   }
 
   @override
@@ -53,7 +53,7 @@ class EditNameFormPageState extends State<EditNameFormPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Padding(
-                      padding: EdgeInsets.fromLTRB(0, 40, 16, 0),
+                      padding: const EdgeInsets.fromLTRB(0, 40, 16, 0),
                       child: SizedBox(
                           height: 100,
                           width: 150,
@@ -72,7 +72,7 @@ class EditNameFormPageState extends State<EditNameFormPage> {
                             controller: firstNameController,
                           ))),
                   Padding(
-                      padding: EdgeInsets.fromLTRB(0, 40, 16, 0),
+                      padding: const EdgeInsets.fromLTRB(0, 40, 16, 0),
                       child: SizedBox(
                           height: 100,
                           width: 150,
@@ -93,7 +93,7 @@ class EditNameFormPageState extends State<EditNameFormPage> {
                 ],
               ),
               Padding(
-                  padding: EdgeInsets.only(top: 150),
+                  padding: const EdgeInsets.only(top: 150),
                   child: Align(
                       alignment: Alignment.bottomCenter,
                       child: SizedBox(
@@ -105,9 +105,7 @@ class EditNameFormPageState extends State<EditNameFormPage> {
                             if (_formKey.currentState!.validate() &&
                                 isAlpha(firstNameController.text +
                                     secondNameController.text)) {
-                              updateUserValue(firstNameController.text +
-                                  " " +
-                                  secondNameController.text);
+                              updateUserValue("${firstNameController.text} ${secondNameController.text}");
                               Navigator.pop(context);
                             }
                           },

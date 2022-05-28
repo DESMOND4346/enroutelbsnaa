@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import '../../../DatabaseManager/DatabaseManager.dart';
 
 class AuthenticationHelper {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -13,13 +14,14 @@ class AuthenticationHelper {
         email: email,
         password: password,
       );
+      // await DatabaseManager().createUserData(email, name, user.uid);
       return null;
     } on FirebaseAuthException catch (e) {
       return e.message;
     }
   }
 
-  //SIGN IN METHODJ
+  //SIGN IN METHOD
   Future<String?> signIn(
       {required String email, required String password}) async {
     try {

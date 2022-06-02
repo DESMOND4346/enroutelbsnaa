@@ -1,6 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:enroutelbsnaa/helper/helperfunctions.dart';
+import 'package:enroutelbsnaa/screens/login%20and%20signup/login/authentication.dart';
+import 'package:enroutelbsnaa/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import './authentication.dart';
 import 'package:enroutelbsnaa/components/botnavbar.dart';
 
 class Signup extends StatelessWidget {
@@ -91,6 +94,8 @@ class _SignupFormState extends State<SignupForm> {
   bool agree = false;
 
   final pass = TextEditingController();
+  final _auth = FirebaseAuth.instance.currentUser;
+  DatabaseMethods databaseMethods = DatabaseMethods();
 
   @override
   Widget build(BuildContext context) {
@@ -223,6 +228,16 @@ class _SignupFormState extends State<SignupForm> {
                       .signUp(email: email!, password: password!)
                       .then((result) {
                     if (result == null) {
+                      Map<String?, String?> userDataMap = {
+                        "userName": name,
+                        "userEmail": email
+                      };
+
+                      databaseMethods.addUserInfo(userDataMap);
+
+                      HelperFunctions.saveUserLoggedInSharedPreference(true);
+                      HelperFunctions.saveUserNameSharedPreference(name!);
+                      HelperFunctions.saveUserEmailSharedPreference(email!);
                       FirebaseAuth.instance.currentUser
                           ?.updateDisplayName(name);
                       Navigator.pushReplacement(
@@ -233,7 +248,7 @@ class _SignupFormState extends State<SignupForm> {
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         content: Text(
                           result,
-                          style: TextStyle(fontSize: 16),
+                          style: const TextStyle(fontSize: 16),
                         ),
                       ));
                     }

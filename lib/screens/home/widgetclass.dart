@@ -1,9 +1,9 @@
-import 'package:enroutelbsnaa/components/botnavbar.dart';
 import 'package:enroutelbsnaa/screens/home/phases/prelims.dart';
 import 'package:enroutelbsnaa/screens/home/phases/mains.dart';
 import 'package:enroutelbsnaa/screens/home/phases/interview.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'eligibility/agel.dart';
 import 'eligibility/educations.dart';
@@ -49,6 +49,42 @@ class DetailsContent extends StatelessWidget {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => Nationality()));
       };
+    final TapGestureRecognizer phonepeRecognizer = TapGestureRecognizer()
+      ..onTap = () async {
+        String url =
+            'phonepe://upi/pay?pa=karthikneerukattu@ybl&pn=Karthik&tn=Test Payment&cu=INR';
+        var result = await launch(url);
+        debugPrint(result.toString());
+        if (result == true) {
+          print("Done");
+        } else if (result == false) {
+          print("Fail");
+        }
+      };
+    final TapGestureRecognizer gpayRecognizer = TapGestureRecognizer()
+      ..onTap = () async {
+        String url =
+            'gpay://upi/pay?pa=karthikneerukattu@ybl&pn=Karthik&tn=Test Payment&cu=INR';
+        var result = await launch(url);
+        debugPrint(result.toString());
+        if (result == true) {
+          print("Done");
+        } else if (result == false) {
+          print("Fail");
+        }
+      };
+    final TapGestureRecognizer paytmRecognizer = TapGestureRecognizer()
+      ..onTap = () async {
+        String url =
+            'paytmmp://upipayments/pay?pa=6281776004@paytm&pn=Desmond&tn=Test Payment&cu=INR';
+        var result = await launch(url);
+        debugPrint(result.toString());
+        if (result == true) {
+          print("Done");
+        } else if (result == false) {
+          print("Fail");
+        }
+      };
 
     return Scaffold(
         backgroundColor: Colors.white,
@@ -67,7 +103,7 @@ class DetailsContent extends StatelessWidget {
                           style: TextStyle(
                               color: Color(0xFF5E5454),
                               fontWeight: FontWeight.normal)),
-                      TextSpan(
+                      const TextSpan(
                           text: '\n\nCivil Service Examination',
                           style: TextStyle(
                               color: Color(0xFF1D1C1A),
@@ -108,40 +144,44 @@ class DetailsContent extends StatelessWidget {
                       TextSpan(
                         text: '\n\nAGE LIMIT AND NO.OF ATTEMPTS',
                         style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.w500),
+                            color: Colors.black, fontWeight: FontWeight.w400),
                         recognizer: ageRecognizer,
                       ),
                       TextSpan(
                         text: '\nEDUCATIONAL QUALIFICATIONS',
                         style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.w500),
+                            color: Colors.black, fontWeight: FontWeight.w400),
                         recognizer: educationRecognizer,
                       ),
                       TextSpan(
                         text: '\nNATIONALITY',
                         style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.w500),
+                            color: Colors.black, fontWeight: FontWeight.w400),
                         recognizer: nationalityRecognizer,
                       ),
-                      TextSpan(
+                      const TextSpan(
                           text: '\n\n\nBUY ME A COFFEE?',
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold)),
                       TextSpan(
-                          text: '\n\nPhonepe',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w800)),
+                        text: '\n\nPhonepe',
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.w800),
+                        recognizer: phonepeRecognizer,
+                      ),
                       TextSpan(
-                          text: '\nGpay',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w800)),
+                        text: '\nGpay',
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.w800),
+                        recognizer: gpayRecognizer,
+                      ),
                       TextSpan(
                           text: '\nPaytm',
                           style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.w800))
+                              color: Colors.black, fontWeight: FontWeight.w800),
+                      recognizer: paytmRecognizer,
+                      )
                     ]),
               ),
             ),

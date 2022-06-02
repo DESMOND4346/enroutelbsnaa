@@ -45,7 +45,7 @@ class Interview extends StatelessWidget {
                                   ),
                                   TextSpan(
                                     text:
-                                        '\n\nHere are the 6 main points which can bring wonders for you in the IAS interview. This is the most authentic explanation regarding  IAS Interview or Personality test, based on UPSC notification for Civil Service Exam.',
+                                        '\n\n Here are the 6 main points which can bring wonders for you in the IAS interview. This is the most authentic explanation regarding  IAS Interview or Personality test, based on UPSC notification for Civil Service Exam.',
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.normal),
@@ -57,31 +57,31 @@ class Interview extends StatelessWidget {
                                           fontWeight: FontWeight.w500)),
                                   TextSpan(
                                     text:
-                                        '• The candidate will be interviewed by a Board who will have before them a record of his/her career. He/she will be asked questions on matters of general interest.',
+                                        '\n\n• The candidate will be interviewed by a Board who will have before them a record of his/her career. He/she will be asked questions on matters of general interest.',
                                     style: TextStyle(
                                         fontWeight: FontWeight.normal),
                                   ),
                                   TextSpan(
                                     text:
-                                        '2. The objective of the questions: to judge the mental calibre of a candidate.',
+                                        '\n\n2. The objective of the questions: to judge the mental calibre of a candidate.',
                                     style:
                                         TextStyle(fontWeight: FontWeight.w500),
                                   ),
                                   TextSpan(
                                     text:
-                                        '• The objective of the interview is to assess the personal suitability of the candidate for a career in public service by a Board of competent and unbiased observers. The test is intended to judge the mental calibre of a candidate.',
+                                        '\n\n• The objective of the interview is to assess the personal suitability of the candidate for a career in public service by a Board of competent and unbiased observers. The test is intended to judge the mental calibre of a candidate.',
                                     style: TextStyle(
                                         fontWeight: FontWeight.normal),
                                   ),
                                   TextSpan(
                                     text:
-                                        '3. These are the qualities which are judged',
+                                        '\n\n3. These are the qualities which are judged',
                                     style:
                                         TextStyle(fontWeight: FontWeight.w500),
                                   ),
                                   TextSpan(
                                     text:
-                                        '• In broad terms, this is really an assessment of not only his/her intellectual qualities but also social traits and his/her interest in current affairs.',
+                                        '\n\n• In broad terms, this is really an assessment of not only his/her intellectual qualities but also social traits and his/her interest in current affairs.',
                                     style: TextStyle(
                                         fontWeight: FontWeight.normal),
                                   ),
@@ -93,37 +93,37 @@ class Interview extends StatelessWidget {
                                   ),
                                   TextSpan(
                                     text:
-                                        '4. What is the technique used in the UPSC CSE interview?',
+                                        '\n\n4. What is the technique used in the UPSC CSE interview?',
                                     style:
                                         TextStyle(fontWeight: FontWeight.w500),
                                   ),
                                   TextSpan(
                                     text:
-                                        '• The technique of the interview is not that of a strict cross-examination but of a natural, though directed and purposive conversation which is intended to reveal the mental qualities of the candidate.',
+                                        '\n\n• The technique of the interview is not that of a strict cross-examination but of a natural, though directed and purposive conversation which is intended to reveal the mental qualities of the candidate.',
                                     style: TextStyle(
                                         fontWeight: FontWeight.normal),
                                   ),
                                   TextSpan(
                                     text:
-                                        '5. Not a test of specialized knowledge; not a test of general knowledge either!',
+                                        '\n\n5. Not a test of specialized knowledge; not a test of general knowledge either!',
                                     style:
                                         TextStyle(fontWeight: FontWeight.w500),
                                   ),
                                   TextSpan(
                                     text:
-                                        '• The interview test is not intended to be a test either of the specialized or general knowledge of the candidates which has been already tested through their written papers.',
+                                        '\n\n• The interview test is not intended to be a test either of the specialized or general knowledge of the candidates which has been already tested through their written papers.',
                                     style: TextStyle(
                                         fontWeight: FontWeight.normal),
                                   ),
                                   TextSpan(
                                     text:
-                                        '6. UPSC is looking for ‘well-educated youth’!',
+                                        '\n\n6. UPSC is looking for ‘well-educated youth’!',
                                     style:
                                         TextStyle(fontWeight: FontWeight.w500),
                                   ),
                                   TextSpan(
                                     text:
-                                        '• Candidates are expected to have taken an intelligent interest not only in their special subjects of academic study but also in the events which are happening around them both within and outside their own state or country as well as in modern currents of thought and in new discoveries which should arouse the curiosity of well-educated youth.',
+                                        '\n\n• Candidates are expected to have taken an intelligent interest not only in their special subjects of academic study but also in the events which are happening around them both within and outside their own state or country as well as in modern currents of thought and in new discoveries which should arouse the curiosity of well-educated youth.',
                                     style: TextStyle(
                                         fontWeight: FontWeight.normal),
                                   )

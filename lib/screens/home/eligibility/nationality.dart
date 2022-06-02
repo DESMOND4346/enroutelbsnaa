@@ -19,7 +19,7 @@ class Nationality extends StatelessWidget{
                     ),
                     child: Column(
                         mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
                           RichText(
                             text: const TextSpan(
@@ -31,15 +31,15 @@ class Nationality extends StatelessWidget{
                                     text: 'For IAS and IPS:',
                                     style: TextStyle(fontWeight: FontWeight.w500),
                                   ),
-                                  const TextSpan(
+                                   TextSpan(
                                     text:'• Candidate must be a citizen of India',
                                     style: TextStyle(color: Colors.black, fontWeight: FontWeight.normal),
                                   ),
-                                  const TextSpan(
+                                   TextSpan(
                                     text: 'All other Services:',
                                     style: TextStyle(fontWeight: FontWeight.w500),
                                   ),
-                                  const TextSpan(
+                                  TextSpan(
                                     text: '• Candidate must be either:-\n'
                                       '➊\t A citizen of India, or\n'
                                       '➋\t A subject of Nepal, or\n'

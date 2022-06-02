@@ -32,7 +32,7 @@ class Prelims extends StatelessWidget {
                     ),
                     child: Column(
                         mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
                           RichText(
                             text: TextSpan(
@@ -52,14 +52,14 @@ class Prelims extends StatelessWidget {
                                     recognizer: mainsRecognizer,
                                   ),
                                   const TextSpan(
-                                    text: '\n\nSYLLABUS',
+                                    text: '\n\n SYLLABUS',
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   const TextSpan(
                                     text:
-                                        '\n\nThe UPSC Prelims syllabus can be divided into two  parts:\n\n',
+                                        '\n\n The UPSC Prelims syllabus can be divided into two  parts:\n\n',
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.normal),
@@ -70,7 +70,7 @@ class Prelims extends StatelessWidget {
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500)),
                                   const TextSpan(
-                                      text: '\nGeneral Studies Paper I\n\n',
+                                      text: '\n General Studies Paper I\n\n',
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500)),
                                   const TextSpan(
@@ -78,7 +78,7 @@ class Prelims extends StatelessWidget {
                                         '• Current events of national and international importance. \n• History of India and Indian National Movement.\n• Indian and World Geography-Physical, Social, Economic Geography of India and the World. \n• Indian Polity and Governance – Constitution, Political System, Panchayati Raj, Public Policy, Rights Issues, etc. \n• Economic and Social Development – Sustainable Development, Poverty, Inclusion, Demographics, Social Sector initiatives, etc. \n• General issues on Environmental Ecology, Biodiversity   and Climate Change – that do not require subject specialisation \n• General Science\n\n',
                                   ),
                                   const TextSpan(
-                                    text: 'CSAT/ General Studies Paper-II\n\n',
+                                    text: '\n\n CSAT/ General Studies Paper-II\n\n',
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.w500),

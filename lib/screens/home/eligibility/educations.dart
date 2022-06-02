@@ -19,20 +19,21 @@ class EducationQ extends StatelessWidget{
                     ),
                     child: Column(
                         mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
                           RichText(
                             text: const TextSpan(
                                 text:
-                                '\n EDUCATIONAL QUALIFICATIONS',
+                                '\n EDUCATIONAL QUALIFICATIONS\n',
                                 style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                                 children: <TextSpan>[
                                   const TextSpan(
-                                    text:'The various academic requirements as per the IAS Eligibility Criteria are given below:',
+                                    text:'\nThe various academic requirements as per the IAS Eligibility Criteria are given below:',
+                                    style: TextStyle(fontWeight: FontWeight.normal)
                                   ),
                                   const TextSpan(
-                                    text: '• Minimum qualification for UPSC exam: The candidate must hold a degree from Government recognised Universities or possess an equivalent qualification.\n • Candidates who are in their final year or awaiting results are also eligible to appear for UPSC preliminary Examination. All such candidates who are likely to appear for IAS exams must produce proof of having passed the said examination along with the application for the main IAS examination.\n • Candidates having professional and technical qualifications recognised by the Government as equivalent to professional and technical degrees.\n • Medical students who have passed the final year of MBBS, but are yet to complete their internship also have eligibility for IAS. Although, along with the Main Examination application, a certificate of course completion (including internship) from the concerned authority of the University/Institution has to be submitted.',
-                                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.normal),
+                                    text: '\n\n• Minimum qualification for UPSC exam: The candidate must hold a degree from Government recognised Universities or possess an equivalent qualification.\n \n• Candidates who are in their final year or awaiting results are also eligible to appear for UPSC preliminary Examination. All such candidates who are likely to appear for IAS exams must produce proof of having passed the said examination along with the application for the main IAS examination.\n \n• Candidates having professional and technical qualifications recognised by the Government as equivalent to professional and technical degrees.\n \n• Medical students who have passed the final year of MBBS, but are yet to complete their internship also have eligibility for IAS. Although, along with the Main Examination application, a certificate of course completion (including internship) from the concerned authority of the University/Institution has to be submitted.',
+                                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.normal, fontStyle: FontStyle.italic),
                                   )
                                 ]),
                           ),

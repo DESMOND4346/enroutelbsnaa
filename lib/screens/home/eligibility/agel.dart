@@ -21,25 +21,120 @@ class AgeL extends StatelessWidget {
                     ),
                     child: Column(
                         mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
                           RichText(
-                            text: const TextSpan(
-                                text:
-                                    '\n AGE LIMIT AND NO. OF ATTEMPTS',
-                                style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-                                children: <TextSpan>[
-                                  TextSpan(
-                                    text:'Any one above 21 years can apply for the UPSC CSE.',
-                                  ),
-                                  TextSpan(
-                                    text: ' However, age relaxation is present as follows:\n',
-                                  ),
-                                  TextSpan(
-                                    text: 'Category- \t \t Upper Relaxation	\t No. Attempts \n General \t \t-	32 \t-	6 \n OBC \t \t-	35 \t-	9 \n SC/ST \t \t-	37 \t-	Unlimited (Up to age limit) \n Disabled DSP \t \t-	35 \t-	9 \n Ex-Servicemen \t \t-	37	\t- 9 \n Persons with Disability – EWS  \t \t- 42 \t- 9'
-                                  )
-                                ]),
+                            text:  const TextSpan(
+                              text: '\n AGE LIMIT AND NO. OF ATTEMPTS\n\n',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold, decoration: TextDecoration.underline, decorationThickness: 2.5),
+                            ),
                           ),
+                          Table(
+                            border: TableBorder.all(
+                                color: Colors.black,
+                                style: BorderStyle.solid,
+                                width: 2),
+                            children: [
+                              TableRow(children: [
+                                Column(
+                                  children: const [
+                                    Text(
+                                      'Category',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w700),
+                                    )
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Text(
+                                      'Upper Relaxation',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w700),
+                                    )
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Text(
+                                      'No. Attempts',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w700),
+                                    )
+                                  ],
+                                ),
+                              ]),
+                              TableRow(children: [
+                                Column(
+                                  children: [Text('General')],
+                                ),
+                                Column(
+                                  children: [Text('32')],
+                                ),
+                                Column(
+                                  children: [Text('6')],
+                                ),
+                              ]),
+                              TableRow(children: [
+                                Column(
+                                  children: [Text('OBC')],
+                                ),
+                                Column(
+                                  children: [Text('35')],
+                                ),
+                                Column(
+                                  children: [Text('9')],
+                                )
+                              ]),
+                              TableRow(children: [
+                                Column(
+                                  children: [Text('SC/ST')],
+                                ),
+                                Column(
+                                  children: [Text('37')],
+                                ),
+                                Column(
+                                  children: [Text('Unlimited')],
+                                )
+                              ]),
+                              TableRow(children: [
+                                Column(
+                                  children: [Text('DDSP')],
+                                ),
+                                Column(
+                                  children: [Text('35')],
+                                ),
+                                Column(
+                                  children: [Text('6')],
+                                )
+                              ]),
+                              TableRow(children: [
+                                Column(
+                                  children: [Text('Ex-Servicemen')],
+                                ),
+                                Column(
+                                  children: [Text('37')],
+                                ),
+                                Column(
+                                  children: [Text('9')],
+                                )
+                              ]),
+                              TableRow(children: [
+                                Column(
+                                  children: [Text('PH - EWS')],
+                                ),
+                                Column(
+                                  children: [Text('47')],
+                                ),
+                                Column(
+                                  children: [Text('9')],
+                                )
+                              ])
+                            ],
+                          ),
+                          RichText(text: TextSpan())
                         ])));
           }),
         ));

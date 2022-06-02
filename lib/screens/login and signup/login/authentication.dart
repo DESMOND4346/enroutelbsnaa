@@ -1,9 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import '../../../DatabaseManager/DatabaseManager.dart';
+//import `'../../../DatabaseManager/DatabaseManager.dart';
+
+final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class AuthenticationHelper {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-
   get user => _auth.currentUser;
 
 //SIGN UP METHOD

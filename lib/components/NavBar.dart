@@ -2,6 +2,8 @@ import 'package:enroutelbsnaa/screens/login%20and%20signup/login/login.dart';
 import 'package:enroutelbsnaa/screens/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -59,23 +61,33 @@ class NavBar extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.share),
             title: const Text('Share'),
-            onTap: () => null,
+            onTap: () async {
+              const url = 'https://github.com/DESMOND4346/enroutelbsnaa';
+              await Share.share(url);
+            },
           ),
           const Divider(),
-          ListTile(
-            leading: const Icon(Icons.settings),
-            title: const Text('Settings'),
-            onTap: () => null,
-          ),
+          // ListTile(
+          //   leading: const Icon(Icons.settings),
+          //   title: const Text('Settings'),
+          //   onTap: () => null,
+          // ),
           ListTile(
             leading: const Icon(Icons.description),
             title: const Text('About us'),
-            onTap: () => null,
+            onTap: () async {
+              const url = "https://github.com/DESMOND4346/enroutelbsnaa";
+              if (await canLaunch(url)) {
+                await launch(url);
+              } else {
+                throw "Could not launch $url";
+              }
+            },
           ),
           const Divider(),
           ListTile(
               title: const Text('Log out'),
-              leading: Icon(Icons.exit_to_app),
+              leading: const Icon(Icons.exit_to_app),
               onTap: () => logout()),
         ],
       ),

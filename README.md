@@ -1,16 +1,19 @@
 # enroutelbsnaa
 
-A new Flutter project.
+A project intended to help UPSC aspirants.
 
-## Getting Started
+## About the project
 
-This project is a starting point for a Flutter application.
+This is supposed to be a one stop solution for all the needs of an aspirant starting from the pre-req knowledge to mock tests.
+I may roll down awesome features in the future but for now it's just a basic app. Although i have many ideas it's not really easy to get time. But i will keep the app functional.
 
-A few resources to get you started if this is your first Flutter project:
+PS. Any help would be appreciated. I'd love a hand helping me in developing or a few bucks to pay the server fee which is used to facilitate the chat option for you guys.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+#### PSS. Some books are copyrighted and I don't have permission to share it nor do i support pirated material.
+We just redirect our users to what is already present on the web and we neither support nor endorse them in any manner. It's solely user decision whether to proceed or not.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Contact us for any content removal.
+
+Reach us at enroutelbsnaa@gmail.com
+
+insta: lbsnaa_podam_mawa
